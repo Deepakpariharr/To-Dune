@@ -1,0 +1,374 @@
+/* Page Layout */
+.main {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 2rem;
+  min-height: 100vh;
+  background-color: #2e004f;
+}
+
+/* Header Styles */
+.header {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  margin-bottom: 2rem;
+  width: 100%;
+}
+
+.header h1 {
+  font-size: 2.5rem;
+  margin-bottom: 0.5rem;
+  color: #fff;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2);
+}
+
+.header p {
+  font-size: 1.2rem;
+  color: #f1f1f1;
+}
+
+/* Input Styles */
+.input[type="text"] {
+  padding: 10px;
+  margin-bottom: 1rem;
+  border-radius: 5px;
+  border: 1px solid #5c2a5a;
+  width: 100%;
+  max-width: 300px;
+  background-color: #4b1f4d;
+  color: #f0e6f6;
+  box-shadow: inset 0 1px 2px rgba(0, 0, 0, 0.1);
+  transition: border-color 0.3s;
+}
+
+.input[type="text"]:focus {
+  border-color: #d1a8e4;
+  outline: none;
+}
+
+/* Button Styles */
+.button {
+  padding: 10px 20px;
+  border-radius: 5px;
+  border: none;
+  background-color: #d1a8e4;
+  color: white;
+  cursor: pointer;
+  transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+.button:hover {
+  background-color: #b02a8d;
+  transform: translateY(-2px);
+}
+
+.button:active {
+  animation: pulse 0.3s;
+}
+
+/* Task Bar Styles */
+.taskBar {
+  display: flex;
+  align-items: center;
+  margin: 20px 0;
+}
+
+.taskBar input {
+  padding: 10px;
+  border: 1px solid #5c2a5a;
+  border-radius: 5px;
+  box-shadow: inset 0 1px 2px rgba(0, 0, 0, 0.1);
+  flex: 1;
+  margin-right: 10px;
+  background-color: #4b1f4d;
+  color: #f0e6f6;
+  transition: border-color 0.3s;
+}
+
+.taskBar input:focus {
+  border-color: #d1a8e4;
+  outline: none;
+}
+
+.taskBar button {
+  padding: 10px 15px;
+  border: none;
+  border-radius: 5px;
+  background-color: #d1a8e4;
+  color: #fff;
+  cursor: pointer;
+  transition: background-color 0.3s, transform 0.3s;
+}
+
+.taskBar button:hover {
+  background-color: #b02a8d;
+  transform: translateY(-2px);
+}
+
+.taskBar button:active {
+  animation: pulse 0.3s;
+}
+
+/* Delete Button Styles */
+.deleteButton {
+  padding: 10px 15px;
+  border: none;
+  border-radius: 5px;
+  background-color: linear-gradient(135deg, #6a0dad, #ff0099);
+  color: #fff;
+  cursor: pointer;
+  transition: background-color 0.3s, transform 0.3s;
+  margin-left: auto; /* Push delete button to the right */
+}
+
+.deleteButton:hover {
+  background-color: #ff0099;
+  transform: translateY(-2px);
+}
+
+.deleteButton:active {
+  animation: pulse 0.3s;
+}
+
+/* Card Styles */
+.card {
+  background: rgba(255, 255, 255, 0.2);
+  padding: 1rem 1.5rem;
+  border-radius: 10px;
+  margin-bottom: 1rem;
+  width: 100%;
+  max-width: 500px;
+  box-shadow: 0 8px 15px rgba(0, 0, 0, 0.2);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 15px 25px rgba(0, 0, 0, 0.3);
+}
+
+.card h2 {
+  font-size: 1.5rem;
+  margin-bottom: 0.5rem;
+  color: #200c2c;
+}
+
+.card p {
+  margin: 0;
+  font-size: 1rem;
+  opacity: 0.9;
+  color: #d1a8e4;
+}
+
+/* Center Alignment */
+.center {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+
+/* Grid Layout */
+.grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 1rem;
+  width: 100%;
+  max-width: 600px;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.card {
+  animation: fadeIn 0.5s ease;
+}
+
+@media (min-width: 600px) {
+  .grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .input[type="text"] {
+    max-width: 400px;
+  }
+}
+
+@media (min-width: 900px) {
+  .grid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+
+  .input[type="text"] {
+    max-width: 500px;
+  }
+}
+
+/* Task Item Styles */
+.taskItem {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  padding: 10px;
+  border-radius: 8px;
+  background: rgba(255, 255, 255, 0.2);
+  border: 1px solid #5c2a5a;
+  margin-bottom: 10px;
+  transition: max-height 0.3s ease;
+}
+
+.taskItem.expanded {
+  max-height: 200px;
+}
+
+.taskContent {
+  display: flex;
+  align-items: center;
+  flex: 1;
+}
+
+.taskText {
+  font-size: 1rem;
+  margin-right: 10px;
+  color: #250b34; /* Light Purple */
+}
+
+/* For completed tasks */
+.completedTask {
+  color: #4caf50; /* Green */
+  text-decoration: none; /* Remove line-through */
+}
+
+.taskHeader {
+  display: flex;
+  align-items: center;
+  width: 100%;
+  justify-content: space-between;
+}
+
+.taskDetails {
+  margin-top: 10px;
+  width: 100%;
+  color: #f0e6f6; /* Light Purple */
+}
+
+.taskDetails p {
+  margin: 5px 0;
+}
+
+.taskItem input {
+  padding: 5px;
+  margin-right: 10px;
+  border: 1px solid #5c2a5a;
+  border-radius: 5px;
+  background-color: #4b1f4d;
+  color: #f0e6f6;
+  box-shadow: inset 0 1px 2px rgba(0, 0, 0, 0.2);
+  transition: border-color 0.3s;
+}
+
+.taskItem input:focus {
+  border-color: #d1a8e4;
+  outline: none;
+}
+
+/* TaskList Styles */
+.taskList {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  padding: 20px;
+}
+
+/* Search Box Styles */
+.searchBox {
+  display: flex;
+  align-items: center;
+  margin: 20px 0;
+}
+
+.searchBox input {
+  padding: 10px;
+  border: 1px solid #5c2a5a;
+  border-radius: 5px;
+  box-shadow: inset 0 1px 2px rgba(0, 0, 0, 0.1);
+  flex: 1;
+  margin-right: 10px;
+  background-color: #4b1f4d;
+  color: #f0e6f6;
+  transition: border-color 0.3s;
+}
+
+.searchBox input:focus {
+  border-color: #d1a8e4;
+  outline: none;
+}
+
+.searchBox button {
+  padding: 10px 15px;
+  border: none;
+  border-radius: 5px;
+  background-color: #d1a8e4;
+  color: #fff;
+  cursor: pointer;
+  transition: background-color 0.3s, transform 0.3s;
+}
+
+.searchBox button:hover {
+  background-color: #b02a8d;
+  transform: translateY(-2px);
+}
+
+.searchBox button:active {
+  animation: pulse 0.3s;
+}
+
+.container {
+  font-family: Arial, sans-serif;
+  padding: 20px;
+}
+
+/* General Button Styles */
+.button {
+  padding: 10px 20px;
+  border-radius: 5px;
+  border: none;
+  background-color: #d1a8e4;
+  color: rgb(10, 5, 9);
+  cursor: pointer;
+  transition: background-color 0.3s ease, transform 0.3s ease;
+  margin-right: 10px; /* Add space between buttons */
+}
+
+.button:hover {
+  background-color: #b02a8d;
+  transform: translateY(-2px);
+}
+
+.button:active {
+  animation: pulse 0.3s;
+}
+
+/* Adjust spacing for specific button containers */
+.taskBar button,
+.searchBox button {
+  margin-right: 10px; /* Space between buttons in these containers */
+}
+
+.taskBar button:last-child,
+.searchBox button:last-child {
+  margin-right: 0; /* Remove right margin for the last button */
+}
+
