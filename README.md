@@ -51,20 +51,17 @@ The Todo List application is a task management tool built using Next.js. It allo
    git clone <repository-url>
 
 Navigate to the Project Directory:
-bash
-Copy code
+
 cd todo-list-app
 
 
 Install Dependencies:
-bash
-Copy code
+
 npm install
 
 
 Run the Development Server:
-bash
-Copy code
+
 npm run dev
 
 
